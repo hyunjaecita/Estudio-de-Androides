@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Lista extends AppCompatActivity {
-    Button btnVOLVER;
+    Button btnVOLVER, btnMENU;
     TextView txtNombre, txtDni, txtEmail, txtCumple;
 
     @Override
@@ -36,6 +36,14 @@ public class Lista extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Lista.this, MasLog.class);
                 intent.putExtra("dni", getIntent().getExtras().getString("dni"));
+                startActivity(intent);
+            }
+        });
+        btnMENU = findViewById(R.id.btnMenusito2);
+        btnMENU.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Lista.this, Menu.class);
                 startActivity(intent);
             }
         });
