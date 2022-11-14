@@ -38,11 +38,16 @@ public class Registro extends AppCompatActivity {
                 if (txtNom.getText().toString().equals("") && txtDni.getText().toString().equals("") && txtCum.getText().toString().equals("") && txtEm.getText().toString().equals("") && txtCon.getText().toString().equals("")) {
                     Toast.makeText(Registro.this, "NO SE HA PODIDO GUARDAR EL USUARIO", Toast.LENGTH_LONG).show();
                 } else if (!txtNom.getText().toString().equals("") && !txtDni.getText().toString().equals("") && !txtCum.getText().toString().equals("") && !txtEm.getText().toString().equals("") && !txtCon.getText().toString().equals("")) {
-                    DbUsers du = new DbUsers(Registro.this);
-                    du.insUser(txtNom.getText().toString(),txtCon.getText().toString(), txtDni.getText().toString(), txtEm.getText().toString(),txtCum.getText().toString());
-                    Toast.makeText(Registro.this, "EL USUARIO HA SIDO REGISTRADO CON EXITO", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Registro.this,  Login.class);
-                    startActivity(intent);
+                    if(!(txtDni.getText().toString().length()>9)){
+                        DbUsers du = new DbUsers(Registro.this);
+                        du.insUser(txtNom.getText().toString(),txtCon.getText().toString(), txtDni.getText().toString(), txtEm.getText().toString(),txtCum.getText().toString());
+                        Toast.makeText(Registro.this, "EL USUARIO HA SIDO REGISTRADO CON EXITO", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(Registro.this,  Login.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(Registro.this, "EL DNI DEBE SER MENOR A 9 CARÁCTERES", Toast.LENGTH_LONG).show();
+                    }
+
                 } else {
                     Toast.makeText(Registro.this, "RELLENE TODOS LOS CAMPOS", Toast.LENGTH_LONG).show();
                 }
