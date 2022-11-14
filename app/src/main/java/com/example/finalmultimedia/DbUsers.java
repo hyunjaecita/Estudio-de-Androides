@@ -54,7 +54,7 @@ public class DbUsers extends DbAyudita {
             SQLiteDatabase sqldb = da.getWritableDatabase();
             ContentValues nuevo = new ContentValues();
             nuevo.put("cumple", cumple);
-            numerito = sqldb.update(TABLE_USERS, nuevo, "dni = " + dni , null);
+            numerito = sqldb.update(TABLE_USERS, nuevo, "dni = '" + dni + "'", null);
         }catch (Exception e){
             e.toString();
         }
@@ -67,7 +67,7 @@ public class DbUsers extends DbAyudita {
             SQLiteDatabase sqldb = da.getWritableDatabase();
             ContentValues nuevo = new ContentValues();
             nuevo.put("nombre", nombre);
-            numerito = sqldb.update(TABLE_USERS, nuevo, "dni = " + dni , null);
+            numerito = sqldb.update(TABLE_USERS, nuevo, "dni = '" + dni + "'", null);
         }catch (Exception e){
             e.toString();
         }
@@ -80,7 +80,7 @@ public class DbUsers extends DbAyudita {
             SQLiteDatabase sqldb = da.getWritableDatabase();
             ContentValues nuevo = new ContentValues();
             nuevo.put("correo_electronico", correoNuevo);
-            numerito = sqldb.update(TABLE_USERS, nuevo, "dni = " + dni , null);
+            numerito = sqldb.update(TABLE_USERS, nuevo, "dni = '" + dni + "'", null);
         }catch (Exception e){
             e.toString();
         }

@@ -24,7 +24,8 @@ public class Actualizar extends AppCompatActivity {
         btnVOLVER.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Actualizar.this, Login.class);
+                Intent intent = new Intent(Actualizar.this, MasLog.class);
+                intent.putExtra("dni", getIntent().getStringExtra("dni"));
                 startActivity(intent);
             }
         });
