@@ -31,6 +31,8 @@ public class Lista extends AppCompatActivity {
         txtCumple.setText(user.getCumple());
 
         btnVOLVER = findViewById(R.id.btnVolver);
+
+
         btnVOLVER.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
